@@ -1,0 +1,17 @@
+name = "MUSDB18Datasets"
+uuid = "da760c59-170c-4cfe-a930-26879c80ed70"
+authors = ["ymtoo <ymtoo86@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
+MD5 = "6ac74813-4b46-53a4-afec-0b5dc9d7885c"
+MLDatasets = "eb30cadb-4394-5ae3-aed4-317e484a6458"
+MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
+SignalAnalysis = "df1fea92-c066-49dd-8b36-eace3378ea47"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
