@@ -59,8 +59,9 @@ function MLUtils.splitobs(data::MUSDB18; at::Real, split, shuffle = false)
     @views filepaths = data.metadata["filepaths"]
     @views sources = data.sources
     if shuffle
-        filepaths = shuffleobs(filepaths)
-        sources = shuffleobs(sources)
+        randindices = randperm(n)
+        filepaths = filepaths[randindices]
+        sources = sources[randindices]
     end
 
     train_filepaths, valid_filepaths = map(idx -> obsview(filepaths, idx), splitobs(n; at))
