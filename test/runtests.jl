@@ -7,12 +7,12 @@ using MUSDB18Datasets
     ftype = Float16
     tests = ((ftype, 1, 2, :train), 
              (ftype, 1, 2, :test),
-             (ftype, 2, 2, :train),
-             (ftype, 2, 2, :test),
+             (ftype, 1.5, 2, :train),
+             (ftype, 1.5, 2, :test),
              (ftype, 1, 1, :train), 
              (ftype, 1, 1, :test),
-             (ftype, 2, 1, :train),
-             (ftype, 2, 1, :test))
+             (ftype, 1.5, 1, :train),
+             (ftype, 1.5, 1, :test))
     for (Tx, downsample, numchannels, split) ∈ tests
         musdb18 = MUSDB18(; Tx = Tx, downsample = downsample, numchannels = numchannels, split = split)
         @test musdb18.split == split

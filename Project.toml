@@ -8,6 +8,7 @@ DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
 MD5 = "6ac74813-4b46-53a4-afec-0b5dc9d7885c"
 MLDatasets = "eb30cadb-4394-5ae3-aed4-317e484a6458"
 MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 SignalAnalysis = "df1fea92-c066-49dd-8b36-eace3378ea47"
 
 [extras]

@@ -16,7 +16,7 @@ Rafii, Zafar, Liutkus, Antoine, Stöter, Fabian-Robert, Mimilakis, Stylianos Ioa
 Zenodo. https://doi.org/10.5281/zenodo.3338373
 """
 function MUSDB18(; split=:train, Tx = Float32, downsample = 1, numchannels = NUMCHANNELS, dir = nothing)
-    downsample < 1 && throw(ArgumentError("`downsample` is a positive integer number greater or equal to 1."))
+    downsample < 1 && throw(ArgumentError("`downsample` is a positive number greater or equal to 1."))
     numchannels ∉ 1:NUMCHANNELS && throw(ArgumentError("`numchannels` has to be an integer in the range of [1,$(NUMCHANNELS)]"))
     depname = "MUSDB18-HQ" 
     foldername = split == :train ? "train" :
@@ -33,7 +33,7 @@ function MUSDB18(; split=:train, Tx = Float32, downsample = 1, numchannels = NUM
             s = signal(joinpath(filepath, "$(wavname).wav"))[:,1:numchannels]
             if downsample > 1
                 s = sfiltfilt(lpf, s)
-                s = sresample(s, 1 // downsample; dims = 1)
+                s = sresample(s, 1 // Rational(downsample); dims = 1)
             end
             push!(sources1, convert.(Tx, samples(s)))
         end
