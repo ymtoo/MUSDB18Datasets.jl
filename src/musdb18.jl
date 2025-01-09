@@ -1,5 +1,5 @@
 import ProgressMeter: @showprogress
-import SignalAnalysis: sfiltfilt, sresample, fir
+import SignalAnalysis: fir, signal, sfiltfilt, sresample
 
 export MUSDB18
 export splitobs
