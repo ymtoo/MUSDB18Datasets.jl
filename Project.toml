@@ -1,7 +1,7 @@
 name = "MUSDB18Datasets"
 uuid = "da760c59-170c-4cfe-a930-26879c80ed70"
 authors = ["ymtoo <ymtoo86@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DataDeps = "124859b0-ceae-595e-8997-d05f6a7a8dfe"
