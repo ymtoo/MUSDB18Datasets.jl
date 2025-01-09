@@ -36,7 +36,7 @@ function MUSDB18(; split=:train, Tx = Float32, downsample = 1, numchannels = NUM
             s = signal(joinpath(filepath, "$(wavname).wav"))[:,1:numchannels]
             if downsample > 1
                 s = sfiltfilt(lpf, s)
-                s = sresample(s, 1 // Rational(downsample); dims = 1)
+                s = sresample(s, 1 // Rational(downsample))
             end
             push!(sources1, convert.(Tx, samples(s)))
         end
