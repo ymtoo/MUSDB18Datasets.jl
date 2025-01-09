@@ -1,3 +1,6 @@
+import ProgressMeter: @showprogress
+import SignalAnalysis: sfiltfilt, sresample
+
 export MUSDB18
 export splitobs
 
@@ -27,7 +30,7 @@ function MUSDB18(; split=:train, Tx = Float32, downsample = 1, numchannels = NUM
     sources = Array{Tx,3}[]
     filepaths = readdir(datapath; join = true)
     downsample > 1 && (lpf = fir(127, 0, SAMPLINGRATE / 2 / downsample; fs = SAMPLINGRATE))
-    for filepath ∈ filepaths
+    @showprogress desc="Loading MUSDB18..." for filepath ∈ filepaths
         sources1 = Array{Tx,2}[]
         for wavname ∈ CLASSNAMES 
             s = signal(joinpath(filepath, "$(wavname).wav"))[:,1:numchannels]

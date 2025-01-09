@@ -5,7 +5,6 @@ using MD5: md5
 using MLDatasets
 using MLUtils
 using Random
-using SignalAnalysis
 
 const SAMPLINGRATE = 44100
 const NUMCHANNELS = 2
